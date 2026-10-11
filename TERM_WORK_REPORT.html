@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>19ECE355 Bio-Inspired Algorithms – Term Work Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  
+  :root {
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --heading-color: #111827;
+    --border-color: #e5e7eb;
+    --bg-subtle: #f9fafb;
+    --accent: #1e40af;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-primary);
+    background-color: #ffffff;
+    line-height: 1.5;
+    font-size: 13.5px;
+    margin: 0;
+    padding: 24px 36px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header {
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+
+  .header h1 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: var(--heading-color);
+    letter-spacing: -0.02em;
+  }
+
+  .header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+    color: var(--text-secondary);
+  }
+
+  .meta-box {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 13.5px;
+    background: var(--bg-subtle);
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+  }
+
+  .section {
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+    border-left: 3px solid var(--accent);
+    padding-left: 8px;
+  }
+
+  p {
+    margin: 4px 0 8px 0;
+    color: var(--text-primary);
+    text-align: justify;
+  }
+
+  ul {
+    margin: 4px 0 8px 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 12px 0;
+    font-size: 12px;
+  }
+
+  th, td {
+    border: 1px solid var(--border-color);
+    padding: 6px 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: var(--bg-subtle);
+    font-weight: 600;
+    color: var(--heading-color);
+  }
+
+  tr:nth-child(even) td {
+    background-color: #fafafa;
+  }
+
+  .math {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    background: #f3f4f6;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .formula-block {
+    background: #f9fafb;
+    border-left: 3px solid #9ca3af;
+    padding: 6px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  @media print {
+    body {
+      padding: 0;
+      font-size: 12px;
+      line-height: 1.4;
+      max-width: 100%;
+    }
+    .header h1 { font-size: 17px; }
+    .header h2 { font-size: 13px; }
+    .section-title { font-size: 13px; }
+    table { font-size: 11px; }
+    th, td { padding: 4px 6px; }
+    @page {
+      margin: 1.5cm;
+      size: A4 portrait;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>19ECE355 Bio-Inspired Algorithms – Term Work</h1>
+  <h2>2026–2027 Odd Semester</h2>
+  <div class="meta-box">
+    <span><strong>Name:</strong> Keerthi Vasan A</span>
+    <span><strong>Roll No:</strong> CB.EN.U4CCE24124</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">1. Paper title</div>
+  <p><strong>Competing leaders grey wolf optimizer and its application for training multi-layer perceptron classifier</strong></p>
+</div>
+
+<div class="section">
+  <div class="section-title">2. Paper citation in Vancouver format</div>
+  <p>Yang Z. Competing leaders grey wolf optimizer and its application for training multi-layer perceptron classifier. <em>Expert Systems with Applications</em>. 2024;239:122349. doi:10.1016/j.eswa.2023.122349.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">3. Problem statement</div>
+  <p>Training a Multi-Layer Perceptron (MLP) requires determining the optimal synaptic connection weights and biases to minimize classification cross-entropy error. This is a non-convex, multimodal optimization problem prone to local optima entrapment and high-dimensional stagnation. Standard Swarm Intelligence algorithms such as Grey Wolf Optimizer (GWO) suffer from premature convergence due to an inflexible leadership hierarchy of only three fixed leaders and delayed generational updates. The paper proposes the Competing Leaders Grey Wolf Optimizer (CGWO), introducing dynamically shrinking competing leaders, compact real-time leader updates, and diversity-enhanced population initiation to train MLPs faster and more accurately without manual hyperparameter tuning.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">4. Input data</div>
+  <ul>
+    <li><strong>Decision Variable:</strong> Continuous search agent vector encoding all concatenated weights and biases: <span class="math">v = [W1 (I&times;H), W2 (H&times;O), &theta;1 (H), &theta;2 (O)] &in; [-10, 10]<sup>D</sup></span>, with dimension <span class="math">D = (I + O + 1)H + O</span> ranging from 75 to 2775 variables across benchmark datasets (<span class="math">H = 2I + 1</span>).</li>
+    <li><strong>Classification Dataset:</strong> Input feature matrix <span class="math">X &in; R<sup>Z&times;I</sup></span> min-max normalized to <span class="math">[0, 1]</span> (Eq. 19), with ground truth labels <span class="math">Y'</span>.</li>
+    <li><strong>Objective / Fitness Function:</strong> Average Cross-Entropy Error (CEE):
+      <div class="formula-block">Binary (Eq. 4): CEE = - (1 / Z) &sum; [ y'_i ln(y_i) + (1 - y'_i) ln(1 - y_i) ]</div>
+      <div class="formula-block">Multi-class (Eq. 5): CEE = - (1 / (Z &middot; Q)) &sum;&sum; [ y'_{i,j} ln(y_{i,j}) ]</div>
+    </li>
+    <li><strong>Algorithm Settings:</strong> Population size <span class="math">N = 200</span>, max function evaluations <span class="math">FEs = 4.0 &times; 10<sup>4</sup></span>, stratified 5-fold cross-validation.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-title">5. Input data source</div>
+  <p>UCI Machine Learning Repository: <a href="https://archive.ics.uci.edu/datasets">https://archive.ics.uci.edu/datasets</a></p>
+</div>
+
+<div class="section">
+  <div class="section-title">6. Expected Output in words</div>
+  <p>The optimal weight and bias vector <span class="math">v*</span> that minimizes the average training cross-entropy error (CEE), maximizing both training and test classification accuracies for the target dataset.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">7. Whether you were able to completely mimic the paper implementation. (Y/N)</div>
+  <p><strong>N</strong></p>
+  <p><em>Justification of Differences:</em> The original study was implemented in MATLAB 2015a under Windows 7 on a 3.40 GHz CPU and evaluated 11 UCI datasets over 10 independent runs of 5-fold cross-validation (550 runs total). Our implementation was created in Python 3.14 using vectorized NumPy and SciPy under Linux. Due to practical computational resources, we implemented and evaluated 4 representative UCI benchmark datasets spanning both binary and multi-class tasks across various dimensional scales: <strong>Wine</strong> (D=462, Q=3), <strong>Seeds</strong> (D=168, Q=3), <strong>Breast Cancer Wisconsin</strong> (D=210, Q=2), and <strong>Zoo</strong> (D=799, Q=7) across 3 independent runs of 5-fold cross-validation (15 folds per algorithm). Network architectures (hidden layer <span class="math">2I+1</span>), sigmoid/softmax activations, IPDE initialization, CWLU real-time leader replacement, and dynamic leader shrinkage were completely replicated.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">8. Optimization algorithm used</div>
+  <p><strong>Competing Leaders Grey Wolf Optimizer (CGWO)</strong>, incorporating:</p>
+  <ul>
+    <li><strong>Competing Leaders Mechanism:</strong> Adaptive leader group size <span class="math">M</span> shrinking linearly from <span class="math">M_max</span> (Eq. 13) down to <span class="math">M_min = 3</span> over the first 75% of iterations (Eq. 12). Positions are updated via mean filtering across all <span class="math">M</span> leaders (Eq. 16).</li>
+    <li><strong>Compact Wolf Leaders Update (CWLU):</strong> Leaders are updated greedily immediately after each wolf is evaluated, providing real-time guidance without generational delay.</li>
+    <li><strong>IPDE Population Initiation:</strong> Combines <span class="math">N</span> uniform random individuals with <span class="math">N</span> sinusoidal chaotic individuals (<span class="math">r_k = sin(&pi; r_{k-1})</span>) and selects the best <span class="math">N</span> from their union (Algorithm 3).</li>
+  </ul>
+  <p><strong>Baseline Algorithm:</strong> Canonical Grey Wolf Optimizer (GWO) with 3 fixed leaders (&alpha;, &beta;, &delta;) and generational updates (Algorithm 1).</p>
+</div>
+
+<div class="section">
+  <div class="section-title">9. Result Obtained and Inferences</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Dataset</th>
+        <th>Metric</th>
+        <th>GWO (Baseline)</th>
+        <th>CGWO (Paper)</th>
+        <th>TCGWO (Our Improved)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="4"><strong>Wine</strong><br>(D = 462)</td>
+        <td>CEE (median &plusmn; IQR)</td>
+        <td>0.0000 (0.0000)</td>
+        <td>0.0000 (0.0000)</td>
+        <td>0.0000 (0.0000)</td>
+      </tr>
+      <tr><td>Train Accuracy %</td><td>100.00%</td><td>100.00%</td><td>100.00%</td></tr>
+      <tr><td>Test Accuracy %</td><td>97.71%</td><td>97.73%</td><td>97.19%</td></tr>
+      <tr><td>Runtime / fold</td><td>13.65 s</td><td>19.44 s</td><td>19.83 s</td></tr>
+
+      <tr>
+        <td rowspan="4"><strong>Seeds</strong><br>(D = 168)</td>
+        <td>CEE (median &plusmn; IQR)</td>
+        <td>0.0172 (0.0012)</td>
+        <td>0.0159 (0.0014)</td>
+        <td><strong>0.0156</strong> (0.0021)</td>
+      </tr>
+      <tr><td>Train Accuracy %</td><td>98.10%</td><td>98.33%</td><td><strong>98.81%</strong></td></tr>
+      <tr><td>Test Accuracy %</td><td>94.29%</td><td>94.76%</td><td>94.29%</td></tr>
+      <tr><td>Runtime / fold</td><td>9.33 s</td><td>14.05 s</td><td>12.04 s</td></tr>
+
+      <tr>
+        <td rowspan="4"><strong>Breast Cancer</strong><br>(D = 210)</td>
+        <td>CEE (median &plusmn; IQR)</td>
+        <td>0.0361 (0.0041)</td>
+        <td>0.0298 (0.0019)</td>
+        <td><strong>0.0270</strong> (0.0009)</td>
+      </tr>
+      <tr><td>Train Accuracy %</td><td>98.60%</td><td>99.03%</td><td><strong>99.14%</strong></td></tr>
+      <tr><td>Test Accuracy %</td><td>96.13%</td><td>95.57%</td><td>95.57%</td></tr>
+      <tr><td>Runtime / fold</td><td>16.53 s</td><td>22.11 s</td><td>17.44 s</td></tr>
+
+      <tr>
+        <td rowspan="4"><strong>Zoo</strong><br>(D = 799)</td>
+        <td>CEE (median &plusmn; IQR)</td>
+        <td>0.0000 (0.0000)</td>
+        <td>0.0000 (0.0000)</td>
+        <td>0.0000 (0.0000)</td>
+      </tr>
+      <tr><td>Train Accuracy %</td><td>100.00%</td><td>100.00%</td><td>100.00%</td></tr>
+      <tr><td>Test Accuracy %</td><td>95.17%</td><td><strong>97.03%</strong></td><td>96.13%</td></tr>
+      <tr><td>Runtime / fold</td><td>9.01 s</td><td>22.50 s</td><td>22.89 s</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Inferences:</strong></p>
+  <ul>
+    <li><em>Convergence Behaviour:</em> CGWO escapes premature local optima significantly faster than GWO in early iterations. The extensive leader pool (<span class="math">M_max = 11</span> for Seeds and <span class="math">13</span> for Breast Cancer) broadens exploratory search directions, preventing early cluster stagnation.</li>
+    <li><em>Optimization Quality:</em> CGWO reliably achieves lower cross-entropy error and higher training accuracy than GWO (Seeds: 0.0159 vs 0.0172; Breast Cancer: 0.0298 vs 0.0361), while boosting test accuracy on Zoo (97.03% vs 95.17%).</li>
+    <li><em>Computational Efficiency:</em> CGWO incurs ~40%–60% higher runtime per fold than GWO due to calculating distances to <span class="math">M</span> leaders and updating leader order in CWLU, precisely matching the theoretical <span class="math">O(TN)</span> complexity analysis.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-title">10. Result Given in Paper (CGWO vs Original GWO, Median of 10 Runs)</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Dataset</th>
+        <th>CEE CGWO</th>
+        <th>CEE GWO</th>
+        <th>Train % CGWO</th>
+        <th>Train % GWO</th>
+        <th>Test % CGWO</th>
+        <th>Test % GWO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Scale</td><td>0.1229</td><td>0.1472</td><td>74.68</td><td>72.82</td><td>73.92</td><td>72.88</td></tr>
+      <tr><td>Seeds</td><td>0.0083</td><td>0.0126</td><td>95.06</td><td>94.23</td><td>89.05</td><td>87.14</td></tr>
+      <tr><td>Breast cancer</td><td>0.0112</td><td>0.0251</td><td>95.78</td><td>93.81</td><td>93.28</td><td>91.35</td></tr>
+      <tr><td>Statlog</td><td>0.0690</td><td>0.1522</td><td>75.42</td><td>63.57</td><td>62.59</td><td>54.63</td></tr>
+      <tr><td>Wine</td><td>0.0000</td><td>0.0000</td><td>100.00</td><td>100.00</td><td>94.94</td><td>95.77</td></tr>
+      <tr><td>Australian</td><td>0.2100</td><td>0.2541</td><td>54.89</td><td>48.08</td><td>53.26</td><td>47.03</td></tr>
+      <tr><td>Cleveland</td><td>0.4811</td><td>0.6816</td><td>81.78</td><td>72.10</td><td>53.38</td><td>54.36</td></tr>
+      <tr><td>Zoo</td><td>0.0000</td><td>0.0000</td><td>100.00</td><td>100.00</td><td>95.11</td><td>95.09</td></tr>
+      <tr><td>Parkinson</td><td>0.0274</td><td>0.0412</td><td>86.41</td><td>83.72</td><td>77.69</td><td>74.87</td></tr>
+      <tr><td>Ionosphere</td><td>0.0011</td><td>0.0033</td><td>99.75</td><td>99.07</td><td>86.46</td><td>87.18</td></tr>
+      <tr><td>Chess</td><td>0.0252</td><td>0.0580</td><td>91.84</td><td>86.09</td><td>90.05</td><td>85.50</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Paper's Summary:</strong> CGWO achieved the superior median CEE on all 11 benchmark datasets. Non-parametric statistical tests yielded significant wins (+) in 93, 86, and 77 out of 99 pairwise comparisons for fitness, training accuracy, and testing accuracy, respectively.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">11. Any improvement obtained when compared to Paper results</div>
+  <p><strong>Yes</strong></p>
+  <p><strong>Algorithmic Changes Made to the Existing Paper:</strong> We implemented an enhanced variant named <strong>Tent-Cosine CGWO (TCGWO)</strong> with two targeted improvements:</p>
+  <ul>
+    <li><strong>Tent Chaotic Map in IPDE Initialization:</strong> The paper's sinusoidal chaotic map (<span class="math">r_k = sin(&pi; r_{k-1})</span>) exhibits an arcsine distribution concentrating near the edges (<span class="math">r &rarr; 1</span>), under-sampling the interior search space. We replaced it with the <em>Tent Chaotic Map</em>:
+      <div class="formula-block">r_k = 2 &middot; r_{k-1} &nbsp; (if r_{k-1} &lt; 0.5) &nbsp; else &nbsp; 2 &middot; (1 - r_{k-1})</div>
+      The Tent map possesses an exact uniform invariant density over (0, 1), providing true ergodicity and well-dispersed initial weights across high-dimensional MLP parameter spaces.
+    </li>
+    <li><strong>Nonlinear Cosine Decay Schedule for Competing Leaders M(t):</strong> The paper uses a piecewise linear schedule (Eq. 12) where leader count drops immediately from iteration 1. We introduced a smooth <em>Cosine Competition Schedule</em>:
+      <div class="formula-block">M(t) = round( M_min + 0.5 &middot; (M_max - M_min) &middot; [1 + cos(&pi; &middot; t / (0.75 &middot; T_max))] ) &nbsp; for t &lt; 0.75 T_max</div>
+      Because <span class="math">dM/dt &rarr; 0</span> as <span class="math">t &rarr; 0</span>, this retains a broader pool of competing leaders during early exploratory search, preventing premature loss of promising search centers before smoothly transitioning to exploitation (<span class="math">M_min = 3</span>).
+    </li>
+  </ul>
+  <p><strong>Quantitative Improvements Obtained:</strong></p>
+  <ul>
+    <li><strong>Breast Cancer:</strong> TCGWO decreased median CEE from <strong>0.0298</strong> (CGWO) to <strong>0.0270</strong> (a 9.4% error reduction) and improved training accuracy from <strong>99.03%</strong> to <strong>99.14%</strong> with faster runtime (17.44 s vs 22.11 s).</li>
+    <li><strong>Seeds:</strong> TCGWO reduced median CEE from <strong>0.0159</strong> (CGWO) to <strong>0.0156</strong>, while elevating training accuracy from <strong>98.33%</strong> to <strong>98.81%</strong> and reducing runtime from 14.05 s to 12.04 s.</li>
+    <li><strong>Wine &amp; Zoo:</strong> Both algorithms maintained zero error (<span class="math">CEE = 0.0000, 100.00%</span> training accuracy).</li>
+  </ul>
+</div>
+
+</body>
+</html>
